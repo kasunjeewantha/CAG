@@ -1,11 +1,32 @@
 import React, {useState, useCallback, useEffect} from 'react';
+import {View, StyleSheet} from 'react-native';
 import {GiftedChat, Message} from 'react-native-gifted-chat';
 import axios from 'axios';
-import Icon from 'react-native-vector-icons/FontAwesome';
+
+const styles = StyleSheet.create({
+  container: {
+    backgroundColor: 'white',
+    flex: 1,
+  },
+});
 
 const Home = () => {
   const [messages, setMessages] = useState([]);
   const [isTyping, SetIsTyping] = useState(false);
+
+  useEffect(() => {
+    setMessages([
+      {
+        _id: 1,
+        text: 'Welcome',
+        createdAt: new Date(),
+        user: {
+          _id: 2,
+          name: 'Bot',
+        },
+      },
+    ]);
+  }, []);
 
   const onSend = message => {
     getBotResponse(message[0].text);
@@ -22,8 +43,6 @@ const Home = () => {
       user: {
         _id: 2,
         name: 'Bot',
-        avatar:
-          'https://cdn.pixabay.com/photo/2019/11/03/20/11/portrait-4599553__340.jpg',
       },
     };
     setMessages(previousMessages => {
@@ -51,15 +70,18 @@ const Home = () => {
   };
 
   return (
-    <GiftedChat
-      messages={messages}
-      isTyping={isTyping}
-      onSend={messages => onSend(messages)}
-      user={{
-        _id: 1,
-        name: 'User',
-      }}
-    />
+    <View style={styles.container}>
+      <GiftedChat
+        messages={messages}
+        isTyping={isTyping}
+        onSend={messages => onSend(messages)}
+        user={{
+          _id: 1,
+          name: 'User',
+        }}
+        showUserAvatar={true}
+      />
+    </View>
   );
 };
 
