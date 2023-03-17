@@ -1,6 +1,7 @@
 import React, {useState, useCallback, useEffect} from 'react';
 import {GiftedChat, Message} from 'react-native-gifted-chat';
 import axios from 'axios';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 const Home = () => {
   const [messages, setMessages] = useState([]);
@@ -20,8 +21,9 @@ const Home = () => {
       createdAt: new Date(),
       user: {
         _id: 2,
-        name: 'React Native',
-        avatar: 'https://placeimg.com/140/140/any',
+        name: 'Bot',
+        avatar:
+          'https://cdn.pixabay.com/photo/2019/11/03/20/11/portrait-4599553__340.jpg',
       },
     };
     setMessages(previousMessages => {
@@ -42,7 +44,9 @@ const Home = () => {
         SetIsTyping(false);
       })
       .catch(function (error) {
-        console.log(error);
+        console.log(error.message);
+        sendBotResponse('error');
+        SetIsTyping(false);
       });
   };
 
@@ -53,6 +57,7 @@ const Home = () => {
       onSend={messages => onSend(messages)}
       user={{
         _id: 1,
+        name: 'User',
       }}
     />
   );

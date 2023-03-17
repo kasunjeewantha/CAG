@@ -12,6 +12,8 @@
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		8C3DBF3129C2FF210041FBE0 /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = 8C3DBF3029C2FF210041FBE0 /* Fonts */; };
+		8C3DBF3329C2FF910041FBE0 /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = 8C3DBF3229C2FF910041FBE0 /* Fonts */; };
 		A28B67CEA7F9D2D8B0AD8A3F /* libPods-CAG-CAGTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 368CA3E995FAEF3B5E53B021 /* libPods-CAG-CAGTests.a */; };
 		C4E5647067EF36B05688AF41 /* libPods-CAG.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 566ADD1CA357D3708DC4913D /* libPods-CAG.a */; };
 /* End PBXBuildFile section */
@@ -39,6 +41,8 @@
 		368CA3E995FAEF3B5E53B021 /* libPods-CAG-CAGTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CAG-CAGTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		566ADD1CA357D3708DC4913D /* libPods-CAG.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CAG.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = CAG/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		8C3DBF3029C2FF210041FBE0 /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Fonts; sourceTree = "<group>"; };
+		8C3DBF3229C2FF910041FBE0 /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Fonts; sourceTree = "<group>"; };
 		9CBC6C7E95635CBE3F170248 /* Pods-CAG-CAGTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CAG-CAGTests.release.xcconfig"; path = "Target Support Files/Pods-CAG-CAGTests/Pods-CAG-CAGTests.release.xcconfig"; sourceTree = "<group>"; };
 		CC6C67B4FB7672337AD20B90 /* Pods-CAG.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CAG.release.xcconfig"; path = "Target Support Files/Pods-CAG/Pods-CAG.release.xcconfig"; sourceTree = "<group>"; };
 		D19E3A1026FBBC83B237CA52 /* Pods-CAG-CAGTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CAG-CAGTests.debug.xcconfig"; path = "Target Support Files/Pods-CAG-CAGTests/Pods-CAG-CAGTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -116,6 +120,8 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				8C3DBF3029C2FF210041FBE0 /* Fonts */,
+				8C3DBF3229C2FF910041FBE0 /* Fonts */,
 				13B07FAE1A68108700A75B9A /* CAG */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* CAGTests */,
@@ -242,8 +248,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C3DBF3129C2FF210041FBE0 /* Fonts in Resources */,
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				8C3DBF3329C2FF910041FBE0 /* Fonts in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
