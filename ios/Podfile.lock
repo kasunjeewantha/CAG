@@ -337,6 +337,8 @@ PODS:
     - RCTTypeSafety
     - React-Core
     - ReactCommon/turbomodule/core
+  - react-native-splash-screen (3.3.0):
+    - React-Core
   - react-native-voice (0.3.0):
     - React
   - React-perflogger (0.71.4)
@@ -483,6 +485,7 @@ DEPENDENCIES:
   - React-logger (from `../node_modules/react-native/ReactCommon/logger`)
   - react-native-dialogflow (from `../node_modules/react-native-dialogflow`)
   - react-native-safe-area-context (from `../node_modules/react-native-safe-area-context`)
+  - react-native-splash-screen (from `../node_modules/react-native-splash-screen`)
   - react-native-voice (from `../node_modules/react-native-voice`)
   - React-perflogger (from `../node_modules/react-native/ReactCommon/reactperflogger`)
   - React-RCTActionSheet (from `../node_modules/react-native/Libraries/ActionSheetIOS`)
@@ -565,6 +568,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native-dialogflow"
   react-native-safe-area-context:
     :path: "../node_modules/react-native-safe-area-context"
+  react-native-splash-screen:
+    :path: "../node_modules/react-native-splash-screen"
   react-native-voice:
     :path: "../node_modules/react-native-voice"
   React-perflogger:
@@ -638,6 +643,7 @@ SPEC CHECKSUMS:
   React-logger: 0d58569ec51d30d1792c5e86a8e3b78d24b582c6
   react-native-dialogflow: 786714700b825b342c9db519efa0b467aee1cded
   react-native-safe-area-context: 39c2d8be3328df5d437ac1700f4f3a4f75716acc
+  react-native-splash-screen: 4312f786b13a81b5169ef346d76d33bc0c6dc457
   react-native-voice: 9829ac5dc9300687c5f215bddf6c9645e82923fc
   React-perflogger: 0bb0522a12e058f6eb69d888bc16f40c16c4b907
   React-RCTActionSheet: bfd675a10f06a18728ea15d82082d48f228a213a
