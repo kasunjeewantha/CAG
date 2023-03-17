@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react';
 import {StyleSheet, SafeAreaView, View, Text} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
-import Colors from '../styles/Colors';
+import Colors from '../styles/colors';
 import {version as APP_VERSION} from '../../package.json';
 
 const styles = StyleSheet.create({

@@ -1,12 +1,16 @@
 import React, {useState, useCallback, useEffect} from 'react';
-import {View, StyleSheet} from 'react-native';
-import {GiftedChat, Message} from 'react-native-gifted-chat';
+import {View, StyleSheet, ImageBackground, Image} from 'react-native';
+import {GiftedChat} from 'react-native-gifted-chat';
 import axios from 'axios';
 
 const styles = StyleSheet.create({
   container: {
     backgroundColor: 'white',
     flex: 1,
+  },
+  image: {
+    flex: 1,
+    justifyContent: 'center',
   },
 });
 
@@ -71,16 +75,21 @@ const Home = () => {
 
   return (
     <View style={styles.container}>
-      <GiftedChat
-        messages={messages}
-        isTyping={isTyping}
-        onSend={messages => onSend(messages)}
-        user={{
-          _id: 1,
-          name: 'User',
-        }}
-        showUserAvatar={true}
-      />
+      <ImageBackground
+        source={require('../assets/png/pronto-p.png')}
+        resizeMode="contain"
+        style={styles.image}>
+        <GiftedChat
+          messages={messages}
+          isTyping={isTyping}
+          onSend={messages => onSend(messages)}
+          user={{
+            _id: 1,
+            name: 'User',
+          }}
+          showUserAvatar={true}
+        />
+      </ImageBackground>
     </View>
   );
 };
