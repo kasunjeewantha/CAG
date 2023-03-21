@@ -1,7 +1,8 @@
 import React, {useState, useEffect} from 'react';
-import {StyleSheet, ImageBackground, SafeAreaView} from 'react-native';
+import {View, StyleSheet, ImageBackground, SafeAreaView} from 'react-native';
 import {GiftedChat, Bubble, Send} from 'react-native-gifted-chat';
 import Colors from '../styles/colors';
+import {IconButton} from 'react-native-paper';
 import axios from 'axios';
 
 const styles = StyleSheet.create({
@@ -12,6 +13,14 @@ const styles = StyleSheet.create({
   image: {
     flex: 1,
     justifyContent: 'center',
+  },
+  sendingContainer: {
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  bottomComponentContainer: {
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 });
 
@@ -87,7 +96,23 @@ const Home = () => {
 
   const renderSend = props => {
     return (
-      <Send {...props} textStyle={{color: Colors.darkPurple}} label={'Send'} />
+      <Send {...props}>
+        <View style={styles.sendingContainer}>
+          <IconButton
+            icon="send-circle"
+            size={35}
+            iconColor={Colors.darkPurple}
+          />
+        </View>
+      </Send>
+    );
+  };
+
+  const scrollToBottomComponent = () => {
+    return (
+      <View style={styles.bottomComponentContainer}>
+        <IconButton icon="chevron-double-down" size={36} color="#6646ee" />
+      </View>
     );
   };
 
@@ -128,9 +153,11 @@ const Home = () => {
             name: 'User',
             avatar: `https://ui-avatars.com/api/?name=U"&color=${Colors.black}&background=${Colors.heraBlue}`,
           }}
-          showUserAvatar={true}
+          showUserAvatar
           renderBubble={props => renderBuble(props)}
           renderSend={props => renderSend(props)}
+          placeholder="Type your message here..."
+          scrollToBottomComponent={() => scrollToBottomComponent}
         />
       </ImageBackground>
     </SafeAreaView>
