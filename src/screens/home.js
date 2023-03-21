@@ -1,11 +1,12 @@
-import React, {useState, useCallback, useEffect} from 'react';
-import {View, StyleSheet, ImageBackground, Image} from 'react-native';
-import {GiftedChat} from 'react-native-gifted-chat';
+import React, {useState, useEffect} from 'react';
+import {StyleSheet, ImageBackground, SafeAreaView} from 'react-native';
+import {GiftedChat, Bubble, Send} from 'react-native-gifted-chat';
+import Colors from '../styles/colors';
 import axios from 'axios';
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: 'white',
+    backgroundColor: Colors.white,
     flex: 1,
   },
   image: {
@@ -27,6 +28,7 @@ const Home = () => {
         user: {
           _id: 2,
           name: 'Bot',
+          avatar: `https://ui-avatars.com/api/?name=B"&color=${Colors.black}&background=${Colors.lighterPurple}`,
         },
       },
     ]);
@@ -47,11 +49,46 @@ const Home = () => {
       user: {
         _id: 2,
         name: 'Bot',
+        avatar: `https://ui-avatars.com/api/?name=B"&color=${Colors.black}&background=${Colors.lighterPurple}`,
       },
     };
     setMessages(previousMessages => {
       return GiftedChat.append(previousMessages, [msg]);
     });
+  };
+
+  const renderBuble = props => {
+    return (
+      <Bubble
+        {...props}
+        textStyle={{
+          right: {
+            color: Colors.black,
+          },
+          left: {
+            color: Colors.black,
+          },
+        }}
+        wrapperStyle={{
+          left: {
+            backgroundColor: Colors.lighterPurple,
+          },
+          right: {
+            backgroundColor: Colors.heraBlue,
+          },
+        }}
+        timeTextStyle={{
+          right: {color: Colors.black},
+          left: {color: Colors.black},
+        }}
+      />
+    );
+  };
+
+  const renderSend = props => {
+    return (
+      <Send {...props} textStyle={{color: Colors.darkPurple}} label={'Send'} />
+    );
   };
 
   const getBotResponse = async message => {
@@ -76,23 +113,27 @@ const Home = () => {
   };
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <ImageBackground
         source={require('../assets/png/pronto-p.png')}
         resizeMode="contain"
         style={styles.image}>
         <GiftedChat
           messages={messages}
+          wrapInSafeArea={false}
           isTyping={isTyping}
           onSend={messages => onSend(messages)}
           user={{
             _id: 1,
             name: 'User',
+            avatar: `https://ui-avatars.com/api/?name=U"&color=${Colors.black}&background=${Colors.heraBlue}`,
           }}
           showUserAvatar={true}
+          renderBubble={props => renderBuble(props)}
+          renderSend={props => renderSend(props)}
         />
       </ImageBackground>
-    </View>
+    </SafeAreaView>
   );
 };
 

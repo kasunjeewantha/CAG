@@ -7,25 +7,25 @@ import {version as APP_VERSION} from '../../package.json';
 const styles = StyleSheet.create({
   safeAreaView: {
     flex: 1,
-    backgroundColor: Colors.WHITE_COLOR,
+    backgroundColor: Colors.white,
   },
 
   mainContainer: {
     flex: 1,
-    backgroundColor: Colors.WHITE_COLOR,
+    backgroundColor: Colors.white,
     justifyContent: 'center',
   },
 
   title: {
     flex: 1,
-    backgroundColor: Colors.WHITE_COLOR,
+    backgroundColor: Colors.white,
     justifyContent: 'center',
   },
 
   titleText: {
     fontSize: 45,
     fontWeight: 'bold',
-    color: Colors.BLACK_COLOR,
+    color: Colors.black,
     textAlign: 'center',
   },
 
@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
 
   versionText: {
     fontSize: 15,
-    color: Colors.BLACK_COLOR,
+    color: Colors.black,
     textAlign: 'center',
   },
 });
