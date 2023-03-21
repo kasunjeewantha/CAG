@@ -56,19 +56,21 @@ const Home = () => {
 
   const getBotResponse = async message => {
     SetIsTyping(true);
-    console.log('Messages2', message);
+    console.log('user', message);
     axios
       .post('https://cag.onrender.com/api/df_text_query', {
-        text: JSON.stringify(message),
+        text: message,
       })
       .then(function (response) {
-        console.log(response.data.fulfillmentText);
-        sendBotResponse(JSON.stringify(response.data.fulfillmentText));
+        console.log('bot', response.data.fulfillmentText);
+        sendBotResponse(
+          response.data.fulfillmentText.replace(/<\/?[^>]+>/gi, ' '),
+        );
         SetIsTyping(false);
       })
       .catch(function (error) {
         console.log(error.message);
-        sendBotResponse('error');
+        sendBotResponse(error.message);
         SetIsTyping(false);
       });
   };
